@@ -20,7 +20,6 @@ namespace FundaClient.Controllers
         [HttpGet]
         public async Task<IActionResult> GetTopAgents(string type, string filter)
         {
-            throw new Exception("dkfjdkfj dfjkdfjkd kdhfkdhfkj");
             var result = await ApiClientFactory.Instance.GetPropertyListing(1, type, filter);
             var totalPages = result.Paging.TotalPages;
             var agents = new List<AgentModel>();
