@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FundaClient
 {
@@ -14,13 +15,24 @@ namespace FundaClient
 
         public IConfiguration Configuration { get; }
 
+        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<ApiSettingsModel>(Configuration.GetSection("MySettings"));
+            services.AddMvcCore();
+            services.Configure<ApiSettingsModel>(Configuration.GetSection("ApiSettings"));
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app)
         {
+            app.UseExceptionHandler("/error");
+
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }

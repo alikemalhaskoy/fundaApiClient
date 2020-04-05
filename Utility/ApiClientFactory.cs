@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoreApiClient;
+using System;
 using System.Threading;
 
 namespace FundaClient

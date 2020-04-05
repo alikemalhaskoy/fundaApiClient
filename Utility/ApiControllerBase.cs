@@ -3,7 +3,7 @@
 namespace FundaClient
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public abstract class ApiControllerBase : ControllerBase
     {
         /// <inheritdoc />
