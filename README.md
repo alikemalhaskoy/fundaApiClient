@@ -15,3 +15,5 @@ Known missing features;
 Logging: It has centralized exception handling mechanisim but logging is missing. 
 
 Class and method documentation: Class names, methods and parameter names must be self explanatory, so documentation doesn't seem necessary for now.
+
+Swagger UI: swagger api documentation that allows users to test endpoints, request and response objects is missing.
