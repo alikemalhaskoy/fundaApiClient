@@ -13,4 +13,5 @@ http://localhost:5000/api/agents/?type=koop&filter=/amsterdam/tuin/
 Known missing features;
 
 Logging: It has centralized exception handling mechanisim but logging is missing. 
+
 Class and method documentation: Class names, methods and parameter names must be self explanatory, so documentation doesn't seem necessary for now.
